@@ -5,6 +5,7 @@ import 'package:educat/screens/onBoarding/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+// checks whether you are a new user or active user.
 class CheckOnboard extends StatefulWidget {
   CheckOnboard({super.key});
 
