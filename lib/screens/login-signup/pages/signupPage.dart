@@ -126,7 +126,7 @@ class _SignupPageState extends State<SignupPage> {
                         height: Constraints.maxHeight * 0.02,
                       ),
 
-                      Consumer<SignupProvider>(
+                      Consumer<SignupProvider>( 
                           builder: ((context, snapshot, child) {
                         return Row(
                           children: [
