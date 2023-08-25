@@ -1,5 +1,5 @@
 import 'package:educat/elements/constants/constants.dart';
-import 'package:educat/elements/fonts/myText.dart';
+import 'package:educat/elements/fonts/CustomText.dart';
 import 'package:educat/screens/login-signup/pages/signupPage.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +15,7 @@ class Signup extends StatelessWidget {
       children: [
         MyText(
           text: 'Don\'t have an account?',
-          fontSize: 18,
+          fontsize: 18,
           color: Colors.grey.shade600,
         ),
         InkWell(
@@ -27,8 +27,8 @@ class Signup extends StatelessWidget {
           },
           child: MyText(
             text: ' Sign up',
-            fontWeight: FontWeight.w600,
-            fontSize: 18,
+            fontweight: FontWeight.w600,
+            fontsize: 18,
             color: kMainColor,
           ),
         )

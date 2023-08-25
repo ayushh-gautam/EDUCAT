@@ -1,4 +1,4 @@
-import 'package:educat/elements/fonts/myText.dart';
+import 'package:educat/elements/fonts/CustomText.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
       return SafeArea(
         child: Column(
           children: [
-            // Profile and name displaying section 
+            // Profile and name displaying section
             Container(
               height: Constraints.maxHeight * 0.2,
               width: Constraints.maxWidth,
@@ -35,8 +35,8 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     MyText(
                       text: 'Welcome back, ${user.displayName!}',
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
+                      fontsize: 16,
+                      fontweight: FontWeight.w500,
                       color: kTextBoxColor,
                     ),
                     ClipRRect(
@@ -68,7 +68,10 @@ class _HomePageState extends State<HomePage> {
                 children: [],
               ),
             ),
-            MyText(text: 'Explore more course', fontSize: 20),
+            MyText(
+              text: 'Explore more course',
+              fontsize: 20,
+            ),
 
             InkWell(
                 onTap: () {

@@ -1,6 +1,5 @@
-import 'package:educat/elements/fonts/myText.dart';
+import 'package:educat/elements/fonts/CustomText.dart';
 import 'package:educat/screens/login-signup/elements/customButton.dart';
-import 'package:educat/screens/login-signup/pages/welcomePage.dart';
 import 'package:educat/screens/login-signup/services/authPage.dart';
 import 'package:educat/screens/onBoarding/checkOnboard.dart';
 import 'package:educat/screens/onBoarding/onBoardingContent.dart';
@@ -73,9 +72,9 @@ class _OnboardingState extends State<Onboarding> {
                           child: MyText(
                               text:
                                   currentPage == 2 ? 'Start Learning' : 'Next',
-                              fontWeight: FontWeight.w600,
+                              fontweight: FontWeight.w600,
                               color: Colors.white,
-                              fontSize: 18))
+                              fontsize: 18))
                     ],
                   ),
                 )));

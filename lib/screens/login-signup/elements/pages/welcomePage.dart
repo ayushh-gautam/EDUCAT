@@ -1,6 +1,6 @@
 // ignore: file_names
 import 'package:educat/elements/constants/constants.dart';
-import 'package:educat/elements/fonts/myText.dart';
+import 'package:educat/elements/fonts/CustomText.dart';
 import 'package:educat/screens/login-signup/elements/continueWith.dart';
 import 'package:educat/screens/login-signup/elements/customButton.dart';
 import 'package:educat/screens/login-signup/elements/dontHaveAcc.dart';
@@ -36,13 +36,13 @@ class _WelcomePageState extends State<WelcomePage> {
                   //welcome to educat & welcome image section
                   MyText(
                     text: 'Welcome to',
-                    fontSize: 20,
+                    fontsize: 20,
                     color: Color(0xff24252D),
                   ),
                   MyText(
                     text: 'Educat',
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
+                    fontsize: 40,
+                    fontweight: FontWeight.bold,
                     color: Color(0xFF24252D),
                   ),
                   Center(
@@ -82,7 +82,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   Center(
                     child: MyText(
                       text: 'or',
-                      fontSize: 18,
+                      fontsize: 18,
                       color: Colors.grey.shade500,
                     ),
                   ),
@@ -104,8 +104,8 @@ class _WelcomePageState extends State<WelcomePage> {
                       height: Constraints.maxHeight * 0.079,
                       child: MyText(
                         text: 'Login',
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
+                        fontsize: 16,
+                        fontweight: FontWeight.w600,
                         color: Colors.white,
                       )),
 

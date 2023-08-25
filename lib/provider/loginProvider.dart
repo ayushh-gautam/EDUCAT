@@ -1,8 +1,8 @@
+import 'package:educat/elements/fonts/CustomText.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../elements/fonts/myText.dart';
 
 class LoginProvider with ChangeNotifier {
   bool _obsecureText = true;
@@ -48,15 +48,11 @@ class LoginProvider with ChangeNotifier {
             title: Center(
               child: MyText(
                 text: message,
-                fontSize: 24,
+                fontsize: 24,
                 color: Colors.white,
               ),
             ),
           );
         });
   }
-
-
-
-  
 }

@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:educat/elements/fonts/CustomText.dart';
 import 'package:flutter/material.dart';
-import 'package:educat/elements/fonts/myText.dart';
+
 
 class OnboardingContent extends StatelessWidget {
   String image, title, description;
@@ -28,12 +29,12 @@ class OnboardingContent extends StatelessWidget {
             ),
             MyText(
               text: title,
-              fontSize: 20,
-              fontWeight: FontWeight.w700,
+              fontsize: 20,
+              fontweight: FontWeight.w700,
             ),
             Center(
               child: MyText(
-                  textAlign: TextAlign.center, text: description, fontSize: 15),
+                  textAlign: TextAlign.center, text: description, fontsize: 15,),
             ),
             Spacer(),
           ],

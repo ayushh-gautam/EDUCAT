@@ -1,6 +1,7 @@
 // ignore_for_file: non_constant_identifier_names, use_build_context_synchronously
 import 'package:educat/elements/constants/constants.dart';
-import 'package:educat/elements/fonts/myText.dart';
+import 'package:educat/elements/fonts/CustomText.dart';
+
 import 'package:educat/screens/login-signup/elements/customButton.dart';
 import 'package:educat/screens/login-signup/elements/textBox.dart';
 import 'package:flutter/material.dart';
@@ -40,15 +41,15 @@ class _SignupPageState extends State<SignupPage> {
                     children: [
                       MyText(
                         text: 'Create your \naccount',
-                        fontSize: 34,
-                        fontWeight: FontWeight.w700,
+                        fontsize: 34,
+                        fontweight: FontWeight.w700,
                       ),
                       SizedBox(
                         height: Constraints.maxHeight * 0.038,
                       ),
                       MyText(
                         text: '  Email',
-                        fontSize: 16,
+                        fontsize: 16,
                         color: kGreycolor,
                       ),
                       SizedBox(
@@ -63,7 +64,7 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                       MyText(
                         text: '  Password',
-                        fontSize: 16,
+                        fontsize: 16,
                         color: kGreycolor,
                       ),
                       SizedBox(
@@ -96,7 +97,7 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                       MyText(
                         text: '  Confirm Password',
-                        fontSize: 16,
+                        fontsize: 16,
                         color: kGreycolor,
                       ),
                       SizedBox(
@@ -126,7 +127,7 @@ class _SignupPageState extends State<SignupPage> {
                         height: Constraints.maxHeight * 0.02,
                       ),
 
-                      Consumer<SignupProvider>( 
+                      Consumer<SignupProvider>(
                           builder: ((context, snapshot, child) {
                         return Row(
                           children: [
@@ -149,7 +150,7 @@ class _SignupPageState extends State<SignupPage> {
                         color: value.agree ? kMainColor : kGreycolor,
                         child: MyText(
                           text: 'Sign up',
-                          fontSize: 18,
+                          fontsize: 18,
                           color: Colors.white,
                         ));
                   }))
