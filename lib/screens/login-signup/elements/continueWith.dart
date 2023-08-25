@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, must_be_immutable
+import 'package:educat/elements/fonts/CustomText.dart';
 import 'package:flutter/material.dart';
-import 'package:educat/elements/fonts/myText.dart';
 
 class ContinueWith extends StatelessWidget {
   String text;
@@ -44,8 +44,8 @@ class ContinueWith extends StatelessWidget {
             ),
             MyText(
               text: text,
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
+              fontsize: 18,
+              fontweight: FontWeight.w600,
             )
           ],
         ),

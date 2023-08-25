@@ -1,6 +1,7 @@
 // ignore_for_file: non_constant_identifier_names, use_build_context_synchronously
 import 'package:educat/elements/constants/constants.dart';
-import 'package:educat/elements/fonts/myText.dart';
+import 'package:educat/elements/fonts/CustomText.dart';
+
 import 'package:educat/provider/loginProvider.dart';
 import 'package:educat/screens/login-signup/elements/customButton.dart';
 import 'package:educat/screens/login-signup/elements/dontHaveAcc.dart';
@@ -36,15 +37,15 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               MyText(
                 text: 'Login to your\naccount',
-                fontSize: 32,
-                fontWeight: FontWeight.w800,
+                fontsize: 32,
+                fontweight: FontWeight.w800,
               ),
               SizedBox(
                 height: Constraints.maxHeight * 0.038,
               ),
               MyText(
                 text: '  Email',
-                fontSize: 16,
+                fontsize: 16,
                 color: kGreycolor,
               ),
               SizedBox(
@@ -59,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               MyText(
                 text: '  Password',
-                fontSize: 16,
+                fontsize: 16,
                 color: kGreycolor,
               ),
               SizedBox(
@@ -91,9 +92,9 @@ class _LoginPageState extends State<LoginPage> {
                 padding: EdgeInsets.only(left: Constraints.maxWidth * 0.40),
                 child: MyText(
                   text: 'Forgot your password?',
-                  fontSize: 18,
+                  fontsize: 18,
                   color: kMainColor,
-                  fontWeight: FontWeight.w500,
+                  fontweight: FontWeight.w500,
                 ),
               ),
               SizedBox(
@@ -107,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: Constraints.maxHeight * 0.07,
                   child: MyText(
                     text: 'Sign in',
-                    fontSize: 19,
+                    fontsize: 19,
                     color: Colors.white,
                   )),
               SizedBox(
@@ -116,7 +117,7 @@ class _LoginPageState extends State<LoginPage> {
               Center(
                 child: MyText(
                   text: 'or continue with',
-                  fontSize: 18,
+                  fontsize: 18,
                   color: kGreycolor,
                 ),
               ),
