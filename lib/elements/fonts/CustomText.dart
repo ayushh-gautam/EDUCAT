@@ -20,11 +20,13 @@ class MyText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      
       text,
       textAlign: textAlign,
       style: GoogleFonts.workSans(
-          fontSize: fontsize, fontWeight: fontweight, color: color!, ),
+        fontSize: fontsize,
+        fontWeight: fontweight,
+        color: color!,
+      ),
     );
   }
 }
