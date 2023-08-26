@@ -25,7 +25,7 @@ class MyText extends StatelessWidget {
       style: GoogleFonts.workSans(
         fontSize: fontsize,
         fontWeight: fontweight,
-        color: color!,
+        color: color,
       ),
     );
   }

@@ -30,8 +30,8 @@ class ContinueWith extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(10),
         ),
-        height: height!,
-        width: width!,
+        height: height,
+        width: width,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

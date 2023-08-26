@@ -67,7 +67,7 @@ class _OnboardingState extends State<Onboarding> {
                         curve: Curves.linear);
                   }
                 },
-                height: screenHeight * 0.05,
+                height: screenHeight * 0.07,
                 child: MyText(
                     text: currentPage == 2 ? 'Start Learning' : 'Next',
                     fontweight: FontWeight.w600,

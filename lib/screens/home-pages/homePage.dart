@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import '../../elements/constants/constants.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -23,7 +24,7 @@ class _HomePageState extends State<HomePage> {
           // Profile and name displaying section
           Container(
             height: screenHeight * 0.2,
-            width: screenWidth,
+            // width: screenWidth,
             color: kMainColor,
             child: Padding(
               padding: EdgeInsets.only(

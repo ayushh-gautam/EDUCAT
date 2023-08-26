@@ -27,7 +27,7 @@ class _WelcomePageState extends State<WelcomePage> {
           child: Container(
             margin: EdgeInsets.only(
               left: screenWidth * 0.05,
-              top: screenHeight * 0.05,
+              top: screenHeight * 0.04,
               right: screenWidth * 0.05,
             ),
             child: Column(
@@ -48,7 +48,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 Center(
                   child: Image.asset(
                     'lib/assets/login-images/welcome.png',
-                    height: screenHeight * 0.5,
+                    height: screenHeight * 0.48,
                   ),
                 ),
 
