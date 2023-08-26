@@ -20,106 +20,105 @@ class WelcomePage extends StatefulWidget {
 class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-        body: LayoutBuilder(builder: (context, Constraints) {
-          return SingleChildScrollView(
-            child: Container(
-              margin: EdgeInsets.only(
-                left: Constraints.maxWidth * 0.05,
-                top: Constraints.maxHeight * 0.05,
-                right: Constraints.maxWidth * 0.05,
+          body: SingleChildScrollView(
+        child: Container(
+          margin: EdgeInsets.only(
+            left: screenWidth * 0.05,
+            top: screenHeight * 0.05,
+            right: screenWidth * 0.05,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              //welcome to educat & welcome image section
+              MyText(
+                text: 'Welcome to',
+                fontsize: 20,
+                color: Color(0xff24252D),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  //welcome to educat & welcome image section
-                  MyText(
-                    text: 'Welcome to',
-                    fontsize: 20,
-                    color: Color(0xff24252D),
-                  ),
-                  MyText(
-                    text: 'Educat',
-                    fontsize: 40,
-                    fontweight: FontWeight.bold,
-                    color: Color(0xFF24252D),
-                  ),
-                  Center(
-                    child: Image.asset(
-                      'lib/assets/login-images/welcome.png',
-                      height: Constraints.maxHeight * 0.5,
-                    ),
-                  ),
-
-                  // CONTINUE-WITH SECTION
-                  ContinueWith(
-                    onTap: null,
-                    text: 'Continue With Facebook',
-                    height: Constraints.maxHeight * 0.07,
-                    width: Constraints.maxWidth,
-                    child: Image.asset(
-                      'lib/assets/login-images/facebook.png',
-                    ),
-                  ),
-                  SizedBox(
-                    height: Constraints.maxHeight * 0.02,
-                  ),
-                  ContinueWith(
-                    onTap: () {
-                      GoogleSignin().signInWithGoogle();
-                    },
-                    text: 'Continue With Google     ',
-                    height: Constraints.maxHeight * 0.07,
-                    width: Constraints.maxWidth,
-                    child: Image.asset(
-                      'lib/assets/login-images/google.png',
-                    ),
-                  ),
-                  SizedBox(
-                    height: Constraints.maxHeight * 0.01,
-                  ),
-                  Center(
-                    child: MyText(
-                      text: 'or',
-                      fontsize: 18,
-                      color: Colors.grey.shade500,
-                    ),
-                  ),
-                  SizedBox(
-                    height: Constraints.maxHeight * 0.02,
-                  ),
-
-                  // LOGIN-BUTTON SECTION
-                  CustomButton(
-                      ontap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) {
-                            return LoginPage();
-                          }),
-                        );
-                      },
-                      color: kMainColor,
-                      height: Constraints.maxHeight * 0.079,
-                      child: MyText(
-                        text: 'Login',
-                        fontsize: 16,
-                        fontweight: FontWeight.w600,
-                        color: Colors.white,
-                      )),
-
-                  SizedBox(
-                    height: Constraints.maxHeight * 0.02,
-                  ),
-
-                  Signup()
-                ],
+              MyText(
+                text: 'Educat',
+                fontsize: 40,
+                fontweight: FontWeight.bold,
+                color: Color(0xFF24252D),
               ),
-            ),
-          );
-        }),
-      ),
+              Center(
+                child: Image.asset(
+                  'lib/assets/login-images/welcome.png',
+                  height: screenHeight * 0.5,
+                ),
+              ),
+
+              // CONTINUE-WITH SECTION
+              ContinueWith(
+                onTap: null,
+                text: 'Continue With Facebook',
+                height: screenHeight * 0.07,
+                width: screenWidth,
+                child: Image.asset(
+                  'lib/assets/login-images/facebook.png',
+                ),
+              ),
+              SizedBox(
+                height: screenHeight * 0.02,
+              ),
+              ContinueWith(
+                onTap: () {
+                  GoogleSignin().signInWithGoogle();
+                },
+                text: 'Continue With Google     ',
+                height: screenHeight * 0.07,
+                width: screenWidth,
+                child: Image.asset(
+                  'lib/assets/login-images/google.png',
+                ),
+              ),
+              SizedBox(
+                height: screenHeight * 0.01,
+              ),
+              Center(
+                child: MyText(
+                  text: 'or',
+                  fontsize: 18,
+                  color: Colors.grey.shade500,
+                ),
+              ),
+              SizedBox(
+                height: screenHeight * 0.02,
+              ),
+
+              // LOGIN-BUTTON SECTION
+              CustomButton(
+                  ontap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return LoginPage();
+                      }),
+                    );
+                  },
+                  color: kMainColor,
+                  height: screenHeight * 0.079,
+                  child: MyText(
+                    text: 'Login',
+                    fontsize: 16,
+                    fontweight: FontWeight.w600,
+                    color: Colors.white,
+                  )),
+
+              SizedBox(
+                height: screenHeight * 0.02,
+              ),
+
+              Signup()
+            ],
+          ),
+        ),
+      )),
     );
   }
 }

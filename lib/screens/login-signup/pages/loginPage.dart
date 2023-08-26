@@ -21,143 +21,141 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     //>>>>>>>>>>>>>>>>>>>>>>>> provider <<<<<<<<<<<<<<<<<<<<<<<<<<<<
     print('build called');
     final loginnProvider = Provider.of<LoginProvider>(context, listen: false);
     return Material(
-      child: LayoutBuilder(builder: (context, Constraints) {
-        return Container(
-          margin: EdgeInsets.only(
-            left: Constraints.maxWidth * 0.05,
-            top: Constraints.maxHeight * 0.09,
-            right: Constraints.maxWidth * 0.05,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              MyText(
-                text: 'Login to your\naccount',
-                fontsize: 32,
-                fontweight: FontWeight.w800,
-              ),
-              SizedBox(
-                height: Constraints.maxHeight * 0.038,
-              ),
-              MyText(
-                text: '  Email',
-                fontsize: 16,
-                color: kGreycolor,
-              ),
-              SizedBox(
-                height: Constraints.maxHeight * 0.02,
-              ),
-              TextBox(
-                  text: 'Your email',
-                  obsecureText: false,
-                  controller: loginnProvider.email),
-              SizedBox(
-                height: Constraints.maxHeight * 0.038,
-              ),
-              MyText(
-                text: '  Password',
-                fontsize: 16,
-                color: kGreycolor,
-              ),
-              SizedBox(
-                height: Constraints.maxHeight * 0.02,
-              ),
+      child: Container(
+        margin: EdgeInsets.only(
+          left: screenWidth * 0.05,
+          top: screenHeight * 0.09,
+          right: screenWidth * 0.05,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            MyText(
+              text: 'Login to your\naccount',
+              fontsize: 32,
+              fontweight: FontWeight.w800,
+            ),
+            SizedBox(
+              height: screenHeight * 0.038,
+            ),
+            MyText(
+              text: '  Email',
+              fontsize: 16,
+              color: kGreycolor,
+            ),
+            SizedBox(
+              height: screenHeight * 0.02,
+            ),
+            TextBox(
+                text: 'Your email',
+                obsecureText: false,
+                controller: loginnProvider.email),
+            SizedBox(
+              height: screenHeight * 0.038,
+            ),
+            MyText(
+              text: '  Password',
+              fontsize: 16,
+              color: kGreycolor,
+            ),
+            SizedBox(
+              height: screenHeight * 0.02,
+            ),
 
-              //>>>>>>>>>>>>>>>>>>>>>>>>>>>> Adding consumer to access provider  <<<<<<<<<<<<<<<<<<<<<<<<<<
-              Consumer<LoginProvider>(builder: ((context, value, child) {
-                return TextBox(
-                    suffixIcon: GestureDetector(
-                      onTap: () {
-                        value.eyeButton();
-                      },
-                      child: Icon(
-                        value.obsecure
-                            ? Icons.visibility_off
-                            : Icons.visibility,
-                        color: kGreycolor,
-                      ),
-                    ),
-                    text: 'Your password',
-                    obsecureText: value.obsecure,
-                    controller: loginnProvider.pass);
-              })),
-              SizedBox(
-                height: Constraints.maxHeight * 0.02,
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: Constraints.maxWidth * 0.40),
-                child: MyText(
-                  text: 'Forgot your password?',
-                  fontsize: 18,
-                  color: kMainColor,
-                  fontweight: FontWeight.w500,
-                ),
-              ),
-              SizedBox(
-                height: Constraints.maxHeight * 0.03,
-              ),
-              CustomButton(
-                  color: kMainColor,
-                  ontap: () {
-                    loginnProvider.SignIn(context);
-                  },
-                  height: Constraints.maxHeight * 0.07,
-                  child: MyText(
-                    text: 'Sign in',
-                    fontsize: 19,
-                    color: Colors.white,
-                  )),
-              SizedBox(
-                height: Constraints.maxHeight * 0.04,
-              ),
-              Center(
-                child: MyText(
-                  text: 'or continue with',
-                  fontsize: 18,
-                  color: kGreycolor,
-                ),
-              ),
-              SizedBox(
-                height: Constraints.maxHeight * 0.04,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'lib/assets/login-images/facebook.png',
-                    height: Constraints.maxHeight * 0.06,
-                  ),
-                  SizedBox(
-                    width: Constraints.maxWidth * 0.05,
-                  ),
-                  InkWell(
+            //>>>>>>>>>>>>>>>>>>>>>>>>>>>> Adding consumer to access provider  <<<<<<<<<<<<<<<<<<<<<<<<<<
+            Consumer<LoginProvider>(builder: ((context, value, child) {
+              return TextBox(
+                  suffixIcon: GestureDetector(
                     onTap: () {
-                      Navigator.pop(context);
-                      GoogleSignin().signInWithGoogle();
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) {
-                        return AuthPage();
-                      }));
+                      value.eyeButton();
                     },
-                    child: Image.asset(
-                      'lib/assets/login-images/google.png',
-                      height: Constraints.maxHeight * 0.06,
+                    child: Icon(
+                      value.obsecure ? Icons.visibility_off : Icons.visibility,
+                      color: kGreycolor,
                     ),
                   ),
-                ],
+                  text: 'Your password',
+                  obsecureText: value.obsecure,
+                  controller: loginnProvider.pass);
+            })),
+            SizedBox(
+              height: screenHeight * 0.02,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: screenWidth * 0.40),
+              child: MyText(
+                text: 'Forgot your password?',
+                fontsize: 18,
+                color: kMainColor,
+                fontweight: FontWeight.w500,
               ),
-              SizedBox(
-                height: Constraints.maxHeight * 0.05,
+            ),
+            SizedBox(
+              height: screenHeight * 0.03,
+            ),
+            CustomButton(
+                color: kMainColor,
+                ontap: () {
+                  loginnProvider.SignIn(context);
+                },
+                height: screenHeight * 0.07,
+                child: MyText(
+                  text: 'Sign in',
+                  fontsize: 19,
+                  color: Colors.white,
+                )),
+            SizedBox(
+              height: screenHeight * 0.04,
+            ),
+            Center(
+              child: MyText(
+                text: 'or continue with',
+                fontsize: 18,
+                color: kGreycolor,
               ),
-              Signup(),
-            ],
-          ),
-        );
-      }),
+            ),
+            SizedBox(
+              height: screenHeight * 0.04,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'lib/assets/login-images/facebook.png',
+                  height: screenHeight * 0.06,
+                ),
+                SizedBox(
+                  width: screenWidth * 0.05,
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                    GoogleSignin().signInWithGoogle();
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) {
+                      return AuthPage();
+                    }));
+                  },
+                  child: Image.asset(
+                    'lib/assets/login-images/google.png',
+                    height: screenHeight * 0.06,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: screenHeight * 0.05,
+            ),
+            Signup(),
+          ],
+        ),
+      ),
     );
   }
 }

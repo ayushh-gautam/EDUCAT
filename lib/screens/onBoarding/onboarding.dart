@@ -31,52 +31,51 @@ class _OnboardingState extends State<Onboarding> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-        body: LayoutBuilder(
-            builder: (context, Constraints) => Container(
-                  margin: EdgeInsets.only(
-                      top: Constraints.maxHeight * 0.03,
-                      left: Constraints.maxWidth * 0.03,
-                      bottom: Constraints.maxHeight * 0.04,
-                      right: Constraints.maxWidth * 0.03),
-                  child: Column(
-                    children: [
-                      Expanded(
-                        child: PageView.builder(
-                          itemCount: my_data.length,
-                          controller: _pageController,
-                          itemBuilder: ((context, index) => OnboardingContent(
-                                image: my_data[index].image,
-                                title: my_data[index].title,
-                                description: my_data[index].description,
-                                height: Constraints.maxHeight * 0.6,
-                              )),
-                        ),
-                      ),
-                      CustomButton(
-                          color: Colors.green,
-                          ontap: () {
-                            if (currentPage == 2) {
-                              Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => AuthPage()));
-                              CheckOnboard().saveData(true);
-                            } else {
-                              _pageController.nextPage(
-                                  duration: Duration(milliseconds: 300),
-                                  curve: Curves.linear);
-                            }
-                          },
-                          height: Constraints.maxHeight * 0.05,
-                          child: MyText(
-                              text:
-                                  currentPage == 2 ? 'Start Learning' : 'Next',
-                              fontweight: FontWeight.w600,
-                              color: Colors.white,
-                              fontsize: 18))
-                    ],
-                  ),
-                )));
+      body: Container(
+        margin: EdgeInsets.only(
+            top: screenHeight * 0.03,
+            left: screenWidth * 0.03,
+            bottom: screenHeight * 0.04,
+            right: screenWidth * 0.03),
+        child: Column(
+          children: [
+            Expanded(
+              child: PageView.builder(
+                itemCount: my_data.length,
+                controller: _pageController,
+                itemBuilder: ((context, index) => OnboardingContent(
+                      image: my_data[index].image,
+                      title: my_data[index].title,
+                      description: my_data[index].description,
+                      height: screenHeight * 0.6,
+                    )),
+              ),
+            ),
+            CustomButton(
+                color: Colors.green,
+                ontap: () {
+                  if (currentPage == 2) {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => AuthPage()));
+                    CheckOnboard().saveData(true);
+                  } else {
+                    _pageController.nextPage(
+                        duration: Duration(milliseconds: 300),
+                        curve: Curves.linear);
+                  }
+                },
+                height: screenHeight * 0.05,
+                child: MyText(
+                    text: currentPage == 2 ? 'Start Learning' : 'Next',
+                    fontweight: FontWeight.w600,
+                    color: Colors.white,
+                    fontsize: 18))
+          ],
+        ),
+      ),
+    );
   }
 }

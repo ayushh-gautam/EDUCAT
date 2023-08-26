@@ -18,148 +18,147 @@ class SignupPage extends StatefulWidget {
 class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     final SignuppProvider = Provider.of<SignupProvider>(context, listen: false);
 
     print('huhuhu');
     return Scaffold(
-      body: LayoutBuilder(builder: (context, Constraints) {
-        return SafeArea(
-          child: SingleChildScrollView(
-            physics: NeverScrollableScrollPhysics(),
-            child: Container(
-              height: Constraints.maxHeight * 0.9,
-              margin: EdgeInsets.only(
-                  left: Constraints.maxWidth * 0.05,
-                  top: Constraints.maxHeight * 0.02,
-                  right: Constraints.maxWidth * 0.05,
-                  bottom: Constraints.maxHeight * 0.04),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      MyText(
-                        text: 'Create your \naccount',
-                        fontsize: 34,
-                        fontweight: FontWeight.w700,
-                      ),
-                      SizedBox(
-                        height: Constraints.maxHeight * 0.038,
-                      ),
-                      MyText(
-                        text: '  Email',
-                        fontsize: 16,
-                        color: kGreycolor,
-                      ),
-                      SizedBox(
-                        height: Constraints.maxHeight * 0.02,
-                      ),
-                      TextBox(
-                          text: 'Your email',
-                          obsecureText: false,
-                          controller: SignuppProvider.emailControl),
-                      SizedBox(
-                        height: Constraints.maxHeight * 0.038,
-                      ),
-                      MyText(
-                        text: '  Password',
-                        fontsize: 16,
-                        color: kGreycolor,
-                      ),
-                      SizedBox(
-                        height: Constraints.maxHeight * 0.02,
-                      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          physics: NeverScrollableScrollPhysics(),
+          child: Container(
+            height: screenHeight * 0.9,
+            margin: EdgeInsets.only(
+                left: screenWidth * 0.05,
+                top: screenHeight * 0.02,
+                right: screenWidth * 0.05,
+                bottom: screenHeight * 0.04),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    MyText(
+                      text: 'Create your \naccount',
+                      fontsize: 34,
+                      fontweight: FontWeight.w700,
+                    ),
+                    SizedBox(
+                      height: screenHeight * 0.038,
+                    ),
+                    MyText(
+                      text: '  Email',
+                      fontsize: 16,
+                      color: kGreycolor,
+                    ),
+                    SizedBox(
+                      height: screenHeight * 0.02,
+                    ),
+                    TextBox(
+                        text: 'Your email',
+                        obsecureText: false,
+                        controller: SignuppProvider.emailControl),
+                    SizedBox(
+                      height: screenHeight * 0.038,
+                    ),
+                    MyText(
+                      text: '  Password',
+                      fontsize: 16,
+                      color: kGreycolor,
+                    ),
+                    SizedBox(
+                      height: screenHeight * 0.02,
+                    ),
 
-                      //////////////////////////////////////////////////////////////////
-                      Consumer<SignupProvider>(
-                          builder: ((context, value, child) {
-                        print('eye button tapped');
-                        return TextBox(
-                            suffixIcon: GestureDetector(
-                              onTap: () {
-                                value.eyeButton();
-                              },
-                              child: Icon(
-                                value.obsecure
-                                    ? Icons.visibility_off
-                                    : Icons.visibility,
-                                color: kGreycolor,
-                              ),
+                    //////////////////////////////////////////////////////////////////
+                    Consumer<SignupProvider>(builder: ((context, value, child) {
+                      print('eye button tapped');
+                      return TextBox(
+                          suffixIcon: GestureDetector(
+                            onTap: () {
+                              value.eyeButton();
+                            },
+                            child: Icon(
+                              value.obsecure
+                                  ? Icons.visibility_off
+                                  : Icons.visibility,
+                              color: kGreycolor,
                             ),
-                            text: 'Your password',
-                            obsecureText: value.obsecure,
-                            controller: SignuppProvider.passControl);
-                      })),
+                          ),
+                          text: 'Your password',
+                          obsecureText: value.obsecure,
+                          controller: SignuppProvider.passControl);
+                    })),
 
-                      SizedBox(
-                        height: Constraints.maxHeight * 0.02,
-                      ),
-                      MyText(
-                        text: '  Confirm Password',
-                        fontsize: 16,
-                        color: kGreycolor,
-                      ),
-                      SizedBox(
-                        height: Constraints.maxHeight * 0.02,
-                      ),
+                    SizedBox(
+                      height: screenHeight * 0.02,
+                    ),
+                    MyText(
+                      text: '  Confirm Password',
+                      fontsize: 16,
+                      color: kGreycolor,
+                    ),
+                    SizedBox(
+                      height: screenHeight * 0.02,
+                    ),
 
-                      Consumer<SignupProvider>(
-                          builder: ((context, snapshot, child) {
-                        return TextBox(
-                            suffixIcon: GestureDetector(
-                              onTap: () {
-                                snapshot.cEyeButton();
-                              },
-                              child: Icon(
-                                snapshot.cObsecure
-                                    ? Icons.visibility_off
-                                    : Icons.visibility,
-                                color: kGreycolor,
-                              ),
+                    Consumer<SignupProvider>(
+                        builder: ((context, snapshot, child) {
+                      return TextBox(
+                          suffixIcon: GestureDetector(
+                            onTap: () {
+                              snapshot.cEyeButton();
+                            },
+                            child: Icon(
+                              snapshot.cObsecure
+                                  ? Icons.visibility_off
+                                  : Icons.visibility,
+                              color: kGreycolor,
                             ),
-                            text: 'Your password',
-                            obsecureText: snapshot.cObsecure,
-                            controller: SignuppProvider.confirmPassControl);
-                      })),
+                          ),
+                          text: 'Your password',
+                          obsecureText: snapshot.cObsecure,
+                          controller: SignuppProvider.confirmPassControl);
+                    })),
 
-                      SizedBox(
-                        height: Constraints.maxHeight * 0.02,
-                      ),
+                    SizedBox(
+                      height: screenHeight * 0.02,
+                    ),
 
-                      Consumer<SignupProvider>(
-                          builder: ((context, snapshot, child) {
-                        return Row(
-                          children: [
-                            Checkbox(
-                                value: snapshot.agree,
-                                onChanged: (value) {
-                                  SignuppProvider.agreeCheck(value);
-                                })
-                          ],
-                        );
-                      })),
-                    ],
-                  ),
-                  Consumer<SignupProvider>(builder: ((context, value, child) {
-                    return CustomButton(
-                        ontap: () {
-                          value.agreeTerms(context);
-                        },
-                        height: Constraints.maxHeight * 0.07,
-                        color: value.agree ? kMainColor : kGreycolor,
-                        child: MyText(
-                          text: 'Sign up',
-                          fontsize: 18,
-                          color: Colors.white,
-                        ));
-                  }))
-                ],
-              ),
+                    Consumer<SignupProvider>(
+                        builder: ((context, snapshot, child) {
+                      return Row(
+                        children: [
+                          Checkbox(
+                              value: snapshot.agree,
+                              onChanged: (value) {
+                                SignuppProvider.agreeCheck(value);
+                              })
+                        ],
+                      );
+                    })),
+                  ],
+                ),
+                Consumer<SignupProvider>(builder: ((context, value, child) {
+                  return CustomButton(
+                      ontap: () {
+                        value.agreeTerms(context);
+                      },
+                      height: screenHeight * 0.07,
+                      color: value.agree ? kMainColor : kGreycolor,
+                      child: MyText(
+                        text: 'Sign up',
+                        fontsize: 18,
+                        color: Colors.white,
+                      ));
+                }))
+              ],
             ),
           ),
-        );
-      }),
+        ),
+      ),
     );
   }
 }
