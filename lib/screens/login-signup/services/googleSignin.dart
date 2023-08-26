@@ -1,16 +1,19 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 
 import 'package:google_sign_in/google_sign_in.dart';
 
 class GoogleSignin {
   Future signInWithGoogle() async {
     GoogleSignIn googlesignin = GoogleSignIn();
+
     try {
       final GoogleSignInAccount? guser =
           await googlesignin.signIn().catchError((onError) => print(onError));
       if (guser == null) {
         return;
       }
+
       final GoogleSignInAuthentication gauth = await guser.authentication;
 
       final credential = GoogleAuthProvider.credential(

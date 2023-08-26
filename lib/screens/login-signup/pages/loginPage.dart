@@ -6,8 +6,6 @@ import 'package:educat/provider/loginProvider.dart';
 import 'package:educat/screens/login-signup/elements/customButton.dart';
 import 'package:educat/screens/login-signup/elements/dontHaveAcc.dart';
 import 'package:educat/screens/login-signup/elements/textBox.dart';
-import 'package:educat/screens/login-signup/services/authPage.dart';
-import 'package:educat/screens/login-signup/services/googleSignin.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -135,12 +133,8 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.pop(context);
-                    GoogleSignin().signInWithGoogle();
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) {
-                      return AuthPage();
-                    }));
+                    
+                    loginnProvider.googleSignIn(context);
                   },
                   child: Image.asset(
                     'lib/assets/login-images/google.png',

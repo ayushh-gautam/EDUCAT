@@ -1,4 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:educat/elements/fonts/CustomText.dart';
+import 'package:educat/screens/home-pages/menu-screens/profile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -41,9 +43,18 @@ class _HomePageState extends State<HomePage> {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(14),
                     clipBehavior: Clip.antiAlias,
-                    child: Image.network(
-                      user.photoURL!,
-                      height: screenHeight * 0.076,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context) {
+                            return ProfilePage();
+                          },
+                        ));
+                      },
+                      child: Image.network(
+                        user.photoURL!,
+                        height: screenHeight * 0.076,
+                      ),
                     ), //commit haha
                   ),
                 ],
@@ -85,6 +96,10 @@ class _HomePageState extends State<HomePage> {
                   child: Text('Signout'),
                 ),
               )),
+
+          SizedBox(
+            height: screenHeight * 0.04,
+          ),
         ],
       ),
     )
