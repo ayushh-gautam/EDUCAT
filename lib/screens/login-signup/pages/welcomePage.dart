@@ -2,9 +2,9 @@
 import 'package:educat/elements/constants/constants.dart';
 import 'package:educat/elements/fonts/CustomText.dart';
 
-import 'package:educat/screens/login-signup/elements/continueWith.dart';
-import 'package:educat/screens/login-signup/elements/customButton.dart';
-import 'package:educat/screens/login-signup/elements/dontHaveAcc.dart';
+import 'package:educat/screens/login-signup/Widgets/continueWith.dart';
+import 'package:educat/screens/login-signup/Widgets/customButton.dart';
+import 'package:educat/screens/login-signup/Widgets/dontHaveAcc.dart';
 import 'package:educat/screens/login-signup/pages/loginPage.dart';
 import 'package:educat/screens/login-signup/services/googleSignin.dart';
 import 'package:flutter/material.dart';

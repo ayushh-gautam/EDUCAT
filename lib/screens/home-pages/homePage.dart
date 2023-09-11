@@ -1,3 +1,4 @@
+// ignore_for_file: avoid_unnecessary_containers
 
 import 'package:educat/elements/fonts/CustomText.dart';
 import 'package:educat/screens/home-pages/menu-screens/profile.dart';
@@ -63,7 +64,7 @@ class _HomePageState extends State<HomePage> {
           ),
 
           Container(
-            margin: EdgeInsets.only(left: 30, right: 30),
+            margin: const EdgeInsets.only(left: 30, right: 30),
             height: screenHeight * 0.05,
             color: Colors.blue,
           ),
@@ -85,7 +86,7 @@ class _HomePageState extends State<HomePage> {
 
           InkWell(
               onTap: () {
-                FirebaseAuth.instance.signOut();
+                dbConst.auth.signOut();
                 GoogleSignIn().signOut();
               },
               child: Center(

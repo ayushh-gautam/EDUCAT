@@ -1,5 +1,5 @@
 import 'package:educat/elements/fonts/CustomText.dart';
-import 'package:educat/screens/login-signup/elements/customButton.dart';
+import 'package:educat/screens/login-signup/Widgets/customButton.dart';
 import 'package:educat/screens/login-signup/services/authPage.dart';
 import 'package:educat/screens/onBoarding/checkOnboard.dart';
 import 'package:educat/screens/onBoarding/onBoardingContent.dart';
