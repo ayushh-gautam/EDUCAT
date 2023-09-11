@@ -1,6 +1,5 @@
 import 'package:educat/provider/loginProvider.dart';
 import 'package:educat/provider/signupProvider.dart';
-import 'package:educat/screens/home-pages/menu-screens/search.dart';
 import 'package:educat/screens/onBoarding/checkOnboard.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +23,7 @@ Future<void> main() async {
     ],
     child: MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Huhu(),
+      home: CheckOnboard(),
     ),
   ));
 }
