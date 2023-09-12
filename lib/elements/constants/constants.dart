@@ -14,4 +14,6 @@ class dbConst {
   static User get myUser => auth.currentUser!;
 
   static FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+   static final user = FirebaseAuth.instance.currentUser!;
 }

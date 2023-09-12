@@ -1,32 +1,25 @@
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last
+
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:educat/elements/constants/constants.dart';
 import 'package:educat/elements/fonts/CustomText.dart';
 import 'package:educat/screens/home-pages/menu-screens/profile.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:educat/screens/login-signup/Widgets/skeletonProfile.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
-import '../../elements/constants/constants.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class Header extends StatelessWidget {
+  const Header({super.key});
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
-        body: SafeArea(
-      child: Column(
+      body: Stack(
+        clipBehavior: Clip.none,
         children: [
-          //-------------------- Profile and name displaying section -----------------------
           Container(
-            height: screenHeight * 0.133,
-            // width: screenWidth,
-            color: kMainColor,
             child: Padding(
               padding: EdgeInsets.only(
                   left: screenWidth * 0.03, right: screenWidth * 0.04),
@@ -52,56 +45,50 @@ class _HomePageState extends State<HomePage> {
                           ));
                         },
                         child: CachedNetworkImage(
-                          placeholder: (cxt, url) =>
-                              CircularProgressIndicator(),
+                          placeholder: (cxt, url) => Skeleton(
+                            screenHeight: screenHeight * 0.076,
+                            screenWidth: screenWidth * 2.3,
+                          ),
                           imageUrl: dbConst.user.photoURL!,
                           height: screenHeight * 0.076,
-                        )),
+                        )), //commit haha
                   ),
                 ],
               ),
             ),
+            color: Colors.green,
+            width: double.infinity,
+            height: 163,
           ),
-
-          Container(
-            margin: EdgeInsets.only(left: 30, right: 30),
-            height: screenHeight * 0.05,
-            color: Colors.blue,
-          ),
-
-          Container(
-            child: Column(
-              children: [],
-            ),
-          ),
-          MyText(
-            text: 'Explore more course',
-            fontsize: 20,
-          ),
-
-          InkWell(
-              onTap: () {
-                FirebaseAuth.instance.signOut();
-                GoogleSignIn().signOut();
-              },
-              child: Center(
+          Positioned(
+              bottom: -20,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 30, right: 30),
                 child: Container(
-                  height: 40,
-                  width: 100,
-                  color: Colors.red,
-                  child: Text('Signout'),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    // color: Colors.orange,
+                  ),
+                  width: 340,
+                  height: 50,
+                  child: Row(
+                    children: [
+                      Expanded(
+                          child: TextFormField(
+                        decoration: InputDecoration(
+                            prefixIcon:
+                                GestureDetector(child: Icon(Icons.search)),
+                            fillColor: Colors.white,
+                            filled: true,
+                            border: OutlineInputBorder(
+                                borderSide: BorderSide.none)),
+                      )),
+                    ],
+                  ),
                 ),
-              )),
-
-          SizedBox(
-            height: screenHeight * 0.04,
-          ),
+              ))
         ],
       ),
-    )
-
-        //
-        );
+    );
   }
 }
-// TODO : create a box
