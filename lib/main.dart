@@ -22,9 +22,12 @@ Future<void> main() async {
         create: (_) => SignupProvider(),
       )
     ],
-    child: MaterialApp(debugShowCheckedModeBanner: false, home: Header()
+    child: MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home:
+          //Header()
 
-        // CheckOnboard(),
-        ),
+          CheckOnboard(),
+    ),
   ));
 }

@@ -14,7 +14,7 @@ class UserDetail {
     final newModel = UserModel(
         email: dbConst.myUser.email!,
         username: dbConst.myUser.email!.split('@')[0],
-        photo: dbConst.myUser!.photoURL.toString(),
+        photo: dbConst.myUser.photoURL.toString(),
         displayName: dbConst.myUser.displayName.toString());
 
     return dbConst.firestore

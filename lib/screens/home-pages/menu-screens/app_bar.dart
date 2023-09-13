@@ -58,7 +58,7 @@ class Header extends StatelessWidget {
             ),
             color: Colors.green,
             width: double.infinity,
-            height: 163,
+            height: screenHeight * 0.17,
           ),
           Positioned(
               bottom: -20,
@@ -67,7 +67,6 @@ class Header extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
-                    // color: Colors.orange,
                   ),
                   width: 340,
                   height: 50,
@@ -86,7 +85,7 @@ class Header extends StatelessWidget {
                     ],
                   ),
                 ),
-              ))
+              )),
         ],
       ),
     );
