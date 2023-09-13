@@ -31,6 +31,7 @@ class _HomePageState extends State<HomePage> {
                 height: screenHeight * 0.17,
                 child: const Header(),
               ),
+              //nothing
 
               SizedBox(
                 height: screenHeight * 0.04,
@@ -67,4 +68,3 @@ class _HomePageState extends State<HomePage> {
         );
   }
 }
-// TODO: create a box
