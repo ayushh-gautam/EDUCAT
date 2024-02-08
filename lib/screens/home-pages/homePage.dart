@@ -1,9 +1,7 @@
 // ignore_for_file: sized_box_for_whitespace
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:educat/elements/fonts/CustomText.dart';
 import 'package:educat/screens/home-pages/menu-screens/app_bar.dart';
-import 'package:educat/screens/home-pages/menu-screens/profile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -32,16 +30,13 @@ class _HomePageState extends State<HomePage> {
                 child: const Header(),
               ),
               //nothing
-
               SizedBox(
                 height: screenHeight * 0.04,
               ),
-
               MyText(
                 text: 'Explore more course',
                 fontsize: 20,
               ),
-
               InkWell(
                   onTap: () {
                     FirebaseAuth.instance.signOut();
@@ -56,7 +51,6 @@ class _HomePageState extends State<HomePage> {
                       child: Text('Signout'),
                     ),
                   )),
-
               SizedBox(
                 height: screenHeight * 0.04,
               ),

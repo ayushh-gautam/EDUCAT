@@ -10,6 +10,7 @@ class UserDetail {
         .exists;
   }
 
+  // ignore: non_constant_identifier_names
   static Future<void> CreateUser() async {
     final newModel = UserModel(
         email: dbConst.myUser.email!,

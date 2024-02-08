@@ -23,7 +23,6 @@ class LoginProvider with ChangeNotifier {
   TextEditingController get pass => passController;
 
   void googleSignIn(context) async {
-    
     GoogleSignin().signInWithGoogle().then((value) async {
       if (value != null) {
         if (await UserDetail.checkUser()) {
@@ -50,6 +49,7 @@ class LoginProvider with ChangeNotifier {
         password: passController.text,
       );
       Navigator.pop(context);
+      Navigator.pop(context); 
     } on FirebaseException catch (e) {
       Navigator.pop(context);
       showError(e.code, context);
